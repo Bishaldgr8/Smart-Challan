@@ -1,0 +1,139 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <title>Smart Challan System</title>
+    <style>
+      body {
+        font-family: Arial, sans-serif;
+        background-color: #f5fafc;
+        margin: 0;
+        padding: 0;
+      }
+
+      h1 {
+        text-align: center;
+        color: #f3f0f0;
+      }
+
+      form {
+        max-width: 400px;
+        margin: 0 auto;
+        background: #fff;
+        padding: 20px;
+        border-radius: 5px;
+        box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+      }
+
+      label,
+      select,
+      input {
+        display: block;
+        margin-bottom: 10px;
+      }
+
+      select,
+      input[type="text"],
+      input[type="number"] {
+        width: 100%;
+        padding: 10px;
+        border: 1px solid #ccc;
+        border-radius: 5px;
+      }
+
+      button {
+        background-color: #0074cc;
+        color: #fff;
+        border: none;
+        padding: 10px 15px;
+        border-radius: 5px;
+        cursor: pointer;
+      }
+
+      button:hover {
+        background-color: #005396;
+      }
+
+      #challanResponse {
+        margin-top: 20px;
+      }
+      footer {
+        text-align: center;
+        background-color: #333;
+        color: #fff;
+        padding: 10px 0;
+        bottom: 0;
+        width: 100%;
+      }
+    </style>
+    <link rel="stylesheet" href="https://www.w3schools.com/w3css/4/w3.css">
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-T3c6CoIi6uLrA9TneNEoa7RxnatzjcDSCmG1MXxSR1GAsXEV/Dwwykc2MPK8M2HN" crossorigin="anonymous">
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/js/bootstrap.bundle.min.js" integrity="sha384-C6RzsynM9kWDrMNeT87bh95OGNyZPhcTNXj1NW7RuBCsyN/o0jlpcV8Qyq46cDfL" crossorigin="anonymous"></script>
+  </head>
+  <body>
+    <div>
+        <div class="w3-bar w3-blue-grey">
+            <a href="indexc:\Users\assdr\Desktop\css\main.css.html" class="w3-bar-item w3-button" style="padding-left: 40%;">Home</a>
+       
+          </div>
+      <h2 style="text-align: center;"><img src="logo.png"  alt=""><br>
+       <b>File a Complain</b></h2>
+      <form id="challanForm" style="padding-bottom: 100px;">
+        <label for="vehicleNumber">Select the Vehicle Number:</label>
+        <div>
+          
+          <h2 style="text-align: center;"><img src="g"  alt=""><br>
+          <b></b></h2>
+          <form id="challanForm" style="padding-bottom: 100px;">
+              <label for="vehicleState">State:</label>
+              <select id="vehicleState">
+                  <option value="DL">DL</option>
+                  <option value="MH">MH</option>
+                  <!-- Add other state options as needed -->
+              </select>
+              <label for="vehicleDistrict">District:</label>
+              <select id="vehicleDistrict">
+                  <option value="01">01</option>
+                  <option value="02">02</option>
+                  <!-- Add other district options as needed -->
+              </select>
+              <label for="vehicleCode">Code:</label>
+              <select id="vehicleCode">
+                  <option value="1234">1234</option>
+                  <option value="5678">5678</option>
+                  <!-- Add other registration code options as needed -->
+              </select>
+              <br /><br />
+              <!-- Rest of your form elements -->
+              <!-- ... -->
+              <button type="button" onclick="submitChallan()">Register Vehicle</button>
+          </form>
+      </div>
+      
+      <div id="challanResponse"></div>
+      <label for="vehicleNumber">Vehicle Number:</label>
+        <input type="text" id="vehicleNumber" style="margin-top: 20px;" required /><br /><br />
+        <label for="violationType">Violation Type:</label>
+        <select id="violationType">
+          <option value="Speeding">Speeding</option>
+          <option value="Parking Violation">Parking Violation</option>
+          <option value="Red Light Violation">
+            Red Light Violation
+            <option value="No helmet">No helmet</option>
+            <option value="Tripling">Tripling</option> 
+          </option></select
+        ><br /><br />
+        <label for="fineAmount">Fine Amount (in INR):</label>
+        <input type="number" id="fineAmount" required /><br /><br />
+        <button type="button" onclick="submitChallan()">Submit Challan</button>
+      </form>
+    </div>
+    <div id="challanResponse"></div>
+    <footer >
+      <img src="1200-630.png" height="60" alt="" /><br />
+      &copy; 2023 Smart Challan System. All rights reserved.
+    </footer>
+
+    <script src="challan.js"></script>
+    
+  </body>
+</html>

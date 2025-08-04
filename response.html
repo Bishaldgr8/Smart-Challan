@@ -1,0 +1,59 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <title>Challan Response</title>
+    <style>
+        body {
+            font-family: Arial, sans-serif;
+            background-color: #f4f4f4;
+            margin: 0;
+            padding: 0;
+        }
+
+        h1 {
+            text-align: center;
+            color: #333;
+        }
+
+        #challanDetails {
+            max-width: 400px;
+            margin: 0 auto;
+            background: #fff;
+            padding: 20px;
+            border-radius: 5px;
+            box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+        }
+
+        strong {
+            display: inline-block;
+            width: 200px;
+            font-weight: bold;
+        }
+
+        span {
+            display: inline-block;
+            width: 200px;
+        }</style>
+</head>
+<body>
+    <h1>Challan Details</h1>
+    <div id="challanDetails">
+        <strong>Vehicle Number:</strong> <span id="vehicleNumber"></span><br>
+        <strong>Violation Type:</strong> <span id="violationType"></span><br>
+        <strong>Fine Amount (in INR):</strong> <span id="fineAmount"></span><br>
+    </div>
+
+    <script>
+        // Get data from URL parameters
+        const urlParams = new URLSearchParams(window.location.search);
+        const vehicleNumber = urlParams.get("vehicleNumber");
+        const violationType = urlParams.get("violationType");
+        const fineAmount = urlParams.get("fineAmount");
+
+        // Display the data on the page
+        document.getElementById('vehicleNumber').textContent = vehicleNumber;
+        document.getElementById('violationType').textContent = violationType;
+        document.getElementById('fineAmount').textContent = fineAmount;
+    </script>
+</body>
+</html>

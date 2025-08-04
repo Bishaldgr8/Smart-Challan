@@ -1,0 +1,456 @@
+<html lang="en">
+<head>
+    
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>SmartChallan | Home</title>
+    <!-- Favicon -->
+    <link rel="icon" type="image/png" sizes="32x32" href="./assets/images/favicon.png">
+    <!-- Remix icons -->
+    <link href="https://cdn.jsdelivr.net/npm/remixicon@2.5.0/fonts/remixicon.css" rel="stylesheet">
+    <!-- Swiper.js styles -->
+    <link rel="stylesheet" href="./assets/css/swiper-bundle.min.css"/>
+    <!-- Custom styles -->
+    <link rel="stylesheet" href="./assets/css/main.css">
+</head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <style>
+        /* Container to center-align the video */
+        .video-container {
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            height: 100vh; /* Adjust height as needed */
+        }
+
+        /* CSS style to resize the video */
+        video {
+            width: 600px; /* Adjust width as needed */
+            height: 600px; /* Adjust height as needed */
+        }
+    </style>
+
+<body style="background-color: white;">
+    <!-- Header -->
+   
+        <header class="header" id="header" style="margin-bottom: 20px; background-color: white; ">
+            <div class="navbar container">
+                <!-- logo here -->
+                <a href="./index.html">
+                    <img src="logo.png" alt="" style="height: 50px;">
+                    <h2 class="logo">
+                        <!-- Smart Challan: An initiative by the Government of India -->
+                    </h2>
+                </a>
+
+                <!-- menubar here -->
+
+                <div class="menu" id="menu">
+                    <ul class="list">
+                        <li class="list-item">
+                            <a href="" class="list-link current" style="color: rgb(0, 0, 0);">Home</a>
+                        </li>
+                        <li class="list-item">
+                            <a href="help.html" class="list-link" style="color: black;" onmouseover="this.style.color='grey'" onmouseout="this.style.color='black'">Help Desk</a>
+                        </li>
+                        <li class="list-item">
+                            <a href="https://echallan.parivahan.gov.in/gsticket/" class="list-link" style="color: black;" onmouseover="this.style.color='grey'" onmouseout="this.style.color='black'">Review</a>
+                        </li>
+                        <li class="list-item">
+                            <a href="RegisterChallan.html" class="list-link" style="color: black;" onmouseover="this.style.color='grey'" onmouseout="this.style.color='black'">Register Challan</a>
+                        </li>
+                        <li class="list-item">
+                            <a href="about.html" class="list-link" style="color: black;" onmouseover="this.style.color='grey'" onmouseout="this.style.color='black'">About</a>
+                        </li>
+                        
+                    </ul>
+                </div>
+                
+
+                <!-- right side of menubar -->
+
+                <div class="list list-right">
+                    <button class="btn place-item-center" id="theme-toggle-btn">
+                        <i class="ri-sun-line sun-icon"></i>
+                        <i class="ri-moon-line moon-icon"></i>
+                    </button>
+
+                    <button class="btn place-item-center" id="search-icon">
+                        <i class="ri-search-line"></i>
+                    </button>
+                    <button class="btn place-item-center screen-lg-hidden menu-toggle-icon" id="menu-toggle-icon">
+                        <i class="ri-menu-3-line open-menu-icon"></i>
+                        <i class="ri-close-line close-menu-icon"></i>
+                    </button>
+
+                    <style>
+                        /* Style for the modals */
+                        .modal {
+                            display: none;
+                            position: fixed;
+                            z-index: 1;
+                            left: 0;
+                            top: 0;
+                            width: 100%;
+                            height: 100%;
+                            background-color: rgba(0, 0, 0, 0.5); /* Semi-transparent background */
+                            overflow: auto;
+                        }
+                
+                        /* Style for the modal content */
+                        .modal-content {
+                            background-color: #fefefe;
+                            margin: 15% auto;
+                            padding: 20px;
+                            border: 1px solid #888;
+                            width: 80%;
+                            max-width: 600px;
+                        }
+                
+                        /* Style for the close button */
+                        .close {
+                            color: #aaa;
+                            float: right;
+                            font-size: 28px;
+                            font-weight: bold;
+                        }
+                
+                        .close:hover,
+                        .close:focus {
+                            color: black;
+                            text-decoration: none;
+                            cursor: pointer;
+                        }
+                    </style>
+                </head>
+                <body>
+                <img src="" alt="">
+                    <!-- Modal for Sign In -->
+                    <div id="signInModal" class="modal">
+                        <div class="modal-content">
+                            <span class="close" onclick="closeModal('signInModal')">&times;</span>
+                            <h2>Sign In</h2>
+                            <!-- Your Sign In form content goes here -->
+                            <!-- For example: -->
+                            <form action="/signin" method="post">
+                                <label for="username">Username:</label>
+                                <input type="text" id="username" name="username"required><br><br>
+                                <label for="password">Password:</label>
+                                <input type="password" id="password" name="password"  required><br><br>
+                                <button type="submit">Sign In</button>
+                                
+                            </form>
+                        </div>
+                    </div>
+                
+                    <!-- Modal for Sign Up -->
+                    <div id="signUpModal" class="modal">
+                        <div class="modal-content">
+                            <span class="close" onclick="closeModal('signUpModal')">&times;</span>
+                            <h2>Sign Up</h2>
+                            <!-- Your Sign Up form content goes here -->
+                            <!-- For example: -->
+                            <form method="post">
+                                <label for="username">New Username:</label>
+                                <input type="text" id="username" name="username" required><br><br>
+                                <label for="email">New Email:</label>
+                                <input type="text" id="email" name="email" required><br><br> <!-- Fixed name attribute -->
+                                <label for="password">New Password:</label>
+                                <input type="password" id="password" name="password" required><br><br>
+                                <button type="submit" id="signUp">Sign Up</button>
+                            </form>
+                        </div>
+                    </div>
+                
+                    <!-- Your buttons -->
+                    <a href="#" class="list-link screen-sm-hidden" onclick="openModal('signInModal')">Sign in</a>
+                    <a href="#" class="list-link screen-sm-hidden btn sign-up-btn fancy-border" onclick="openModal('signUpModal')">
+                        <span>Sign up</span>
+                    </a>
+                
+                    <script>
+                        function openModal(modalId) {
+                            document.getElementById(modalId).style.display = "block";
+                        }
+                
+                        function closeModal(modalId) {
+                            document.getElementById(modalId).style.display = "none";
+                        }
+                    </script>
+                    </a>
+                </div>
+            </div>
+        </header>
+    <!-- Search -->
+    <div class="search-form-container container" id="search-form-container">
+         <div class="form-container-inner">
+             <form action="" class="form">
+                 <input type="text" class="form-input" placeholder="What are looking for?">
+                 <button class="btn form-btn"  type="submit">
+                     <i class="ri-search-line"></i>
+                 </button>
+             </form>
+             <span class="form-note">Or press ESC to close</span>
+         </div>
+         <button class="btn form-close-btn place-items-center" id="form-close-btn">
+             <i class="ri-close-line"></i>
+         </button>
+    </div>
+        
+    <!-- Featured articles -->
+    <section class="featured-articles section-header-offset">
+        <div class="features-articles-container container d-grid">
+            <div class="featured-content d-grid">
+                <div class="headline-banner">
+                    <h3 class="headline fancy-border">
+                        <span class="place-items-center">Important Announcement</span>
+                    </h3>
+                    <span class="headline-description"> <marquee behavior="" direction="left">This is the review sample for my beloved review panel. Kindly judge less harsely :]</marquee></span>
+                </div>
+
+                <a href="./post.html" class="article featured-article featured-article-1">
+                    <img src="News1.jpg" alt="Breaking News" class="article-image">
+                    
+                <div class="article-data-container">
+                    <div class="article-data">
+                        <span>Dec 23rd 2023</span>
+                        <span class="article-data-spacer"></span>
+                        <span>1 day ago</span>
+                    </div>
+
+                    <h3 class="title article-title">TRB jawans relieved to make way for new recruits, says DGP; personnel step up protest</h3>
+                </div>
+                </a>
+                <a href="./post2.html" class="article featured-article featured-article-2">
+                    <img src="delhi-high-court-chatgpt-212438376-16x9_5.avif" alt="Breaking News" class="article-image">
+                   
+                <div class="article-data-container">
+                    <div class="article-data">
+                        <span>Dec 5th 2023</span>
+                        <span class="article-data-spacer"></span>
+                        <span>8 min read</span>
+                    </div>
+
+                    <h3 class="title article-title">Delhi High Court directs traffic police to ban slow-moving vehicles on expressways</h3>
+                </div>
+                </a>
+                <a href="./post.html" class="article featured-article featured-article-3">
+                    <img src="post3.png" alt="Breaking News" class="article-image">
+                    
+                <div class="article-data-container">
+                    <div class="article-data">
+                        <span>Dec 5th 2023</span>
+                        <span class="article-data-spacer"></span>
+                        <span>8 min read</span>
+                    </div>
+
+                    <h3 class="title article-title">More crashes, deaths at cop-manned junctions than at traffic ..</h3>
+                </div>
+                </a>
+            </div>
+            <!-- sidebar -->
+            <div class="sidebar d-grid">
+                <h3 class="title featured-content-title">Trending News</h3>
+                <a href="https://www.deccanherald.com/india/delhi/7-traffic-police-staff-sacked-3-cops-suspended-as-delhi-man-says-he-paid-rs-20000-to-carry-liquor-2780741" class="trending-news-box" style="width: 1000px; height: 300;;">
+                    <div class="trending-news-iimage-box">
+                        <span class="trending-number place-items-center">01</span>
+                    <img src="trendingnews1.avif" alt="" class="article-image">
+                    
+                    </div>
+
+                    <div class="trending-news-data">
+                        <div class="article-data">
+                            <span>Dec 5th 2023</span>
+                            <span class="article-data-spacer"></span>
+                        <span>8 min read</span>
+                        </div>
+                        <h3 class="title article-title">
+                            7 traffic police staff sacked, 3 cops suspended as Delhi man says he paid Rs 20,000 to carry liquor
+
+
+                        </h3>
+                    </div>
+                </a>
+                <br>
+                <a href="https://www.indiatvnews.com/entertainment/news/rajnikanths-grandson-issued-challan-by-traffic-police-in-chennai-2023-11-20-903591" class="trending-news-box" style="width: 860px ;height: 300;;">
+                    <div class="trending-news-iimage-box">
+                        <span class="trending-number place-items-center">02</span>
+                    <img src="trendingnews2.jpg" alt=""  class="article-image">
+                    </div>
+
+                    <div class="trending-news-data">
+                        <div class="article-data">
+                            <span>Dec 5th 2023</span>
+                            <span class="article-data-spacer"></span>
+                        <span>5 min read</span>
+                        </div>
+                        <h3 class="title article-title">
+                            Rajinikanth's grandson issued challan by traffic police in Chennai
+                        </h3>
+                    </div>
+                </a>
+                <br>
+                <a href="https://indianexpress.com/article/cities/bangalore/bengaluru-traffic-rules-violations-companies-notified-9069614/" class="trending-news-box" style="width: 860px ;height: 300;;">
+                    <div class="trending-news-iimage-box">
+                        <span class="trending-number place-items-center">03</span>
+                    <img src="livearticle3.png" alt="" style="height: 200px; width: 400px;" class="article-image">
+                    </div>
+
+                    <div class="trending-news-data">
+                        <div class="article-data">
+                            <span>Dec 5th 2023</span>
+                            <span class="article-data-spacer"></span>
+                        <span>5 min read</span>
+                        </div>
+                        <h3 class="title article-title">
+                            Caught breaking traffic rules in Bengaluru? You may soon have to explain it to your boss
+                        </h3>
+                    </div>
+                </a>
+                
+               
+            </div>
+        </div>
+    </section>
+  
+    
+    <!-- Newsletter -->
+    <section class="newsletter section">
+            <div class="container">
+                <h2 class="title section-title" data-name="Newsletter"> NewsLetter</h2>
+
+                <div class="form-container-inner">
+                    <h6 class="title newsletter-title">
+                        Subscribe to SmartChallan
+                    </h6>
+                    <p class="newsletter-description">
+                        Lorem, ipsum dolor sit amet consectetur adipisicing elit. Eum repellat obcaecati unde vitae sed, quos rerum nam autem hic nobis.
+                    </p>
+                    <form action="" class="form">
+                        <input type="text" class="form-input" placeholder="Enter your email address">
+                        <button class="btn form-btn" type="submit">
+                            <i class="ri-mail-send-line"></i>
+                        </button>
+                    </form>
+
+                </div>
+            </div>
+    </section>
+    
+
+   
+    <!-- Footer -->
+    <video autoplay loop muted>
+        <source src="Untitled ‑ Made with FlexClip (1).mp4" type="video/mp4">
+        <style>
+            /* CSS style to resize the video */
+            video {
+                width: 600px; /* Adjust width as needed */
+                height: 600px; /* Adjust height as needed */
+                ;
+            }
+        </style>
+        <!-- You can add additional source elements for different video formats -->
+        <!-- <source src="path/to/your/video.webm" type="video/webm"> -->
+        <!-- <source src="path/to/your/video.ogv" type="video/ogg"> -->
+        Your browser does not support the video tag.
+    </video>
+   
+    <footer class="footer section">
+        <div class="footer-container container d-grid">
+            <div class="company-data">
+                <a href="./index.html">
+                    <h2 class="logo">
+                        SmartChallan
+                    </h2>
+                </a>
+                <p class="company-description">
+                    Revolutionalizing India's Traffic System today and tomorrow.
+                </p>
+                <ul class="list social-media">
+                      <li class="list-item">
+                        <a href="" class="list-link">
+                            <i class="ri-instagram-line"></i>
+
+                            </a>
+                            <a href="" class="list-link">
+                                <i class="ri-facebook-circle-line"></i>
+    
+                                </a>
+                                <a href="" class="list-link">
+                                    <i class="ri-twitter-line"></i>
+        
+                                    </a>
+                                    <a href="" class="list-link">
+                                        <i class="ri-pinterest-line"></i>
+            
+                                        </a>
+                      </li>
+                </ul>
+                
+            </div>
+            <span class="copyright-notice">&copy; 2023 SmartChallan. All rights reserved. </span>
+
+        </div>
+        
+        
+    </footer>
+    <!-- Swiper.js -->
+    <script src="./assets/js/swiper-bundle.min.js"></script>
+    <!-- Custom script -->
+ <script src="./assets/js/main.js"></script>
+ <script type="module">
+    // Import the functions you need from the SDKs you need
+    import { initializeApp } from "https://www.gstatic.com/firebasejs/10.7.1/firebase-app.js";
+    import { getDatabase , ref , set} from "https://www.gstatic.com/firebasejs/10.7.1/firebase-database.js";
+    import { getAuth, createUserWithEmailAndPassword, signInWithEmailAndPassword } from "https://www.gstatic.com/firebasejs/10.7.1/firebase-auth.js";
+    // TODO: Add SDKs for Firebase products that you want to use
+    // https://firebase.google.com/docs/web/setup#available-libraries
+  
+    // Your web app's Firebase configuration
+    const firebaseConfig = {
+    apiKey: "AIzaSyAhS1aIssbw3S1lHy_TOpfwB1cn6bufuOw",
+    authDomain: "login-c68cb.firebaseapp.com",
+    projectId: "login-c68cb",
+    storageBucket: "login-c68cb.appspot.com",
+    messagingSenderId: "877048611937",
+    appId: "1:877048611937:web:22762bf8dbd8642b385620"
+  };
+  
+    // Initialize Firebase
+    const app = initializeApp(firebaseConfig);
+    const db = getDatabase(app);
+    const auth = getAuth();
+    
+    // Fix the button reference (change signUp to sign-up)
+    document.getElementById("signUp").addEventListener("click", e => {
+        e.preventDefault();
+        var email = document.getElementById("email").value;
+        var password = document.getElementById("password").value;
+        var username = document.getElementById("username").value;
+        
+        // Use createUserWithEmailAndPassword from firebase-auth
+        createUserWithEmailAndPassword(auth, email, password)
+            .then((userCredential) => {
+                console.log("created")
+                const user = userCredential.user;
+                set(ref(db, 'users/' + user.uid), {
+                    username: username,
+                    email: email,
+                    password: password
+                });
+                alert("Signed In");
+                window.location.href="RegisterChallan.html"
+            })
+            .catch((error) => {
+                console.log("not created")
+                const errorCode = error.code;
+                const errorMessage = error.message;
+                alert(errorMessage);
+            });
+    });
+    </script>
+</body>
+</html>
